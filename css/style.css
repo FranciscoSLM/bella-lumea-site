@@ -7527,7 +7527,9 @@ h1, h2, h3, h4, h5,
       -webkit-transition: all 0.7s ease;
       -ms-transition: all 0.7s ease;
       transition: all 0.7s ease;
-      opacity: 0; }
+      opacity: 1 !important;
+      z-index: 2;
+    }
       .owl-carousel .owl-nav .owl-prev span:before,
       .owl-carousel .owl-nav .owl-next span:before {
         font-size: 30px; }
@@ -7561,12 +7563,17 @@ h1, h2, h3, h4, h5,
       .owl-carousel .owl-dots .owl-dot.active {
         background: #999999; }
   .owl-carousel:hover .owl-nav .owl-prev,
+  .owl-carousel:hover .owl-nav .owl-prev,
   .owl-carousel:hover .owl-nav .owl-next {
-    opacity: 1; }
-  .owl-carousel:hover .owl-nav .owl-prev {
-    left: -25px; }
-  .owl-carousel:hover .owl-nav .owl-next {
-    right: -25px; }
+    opacity: 1 !important;
+  }
+  .owl-nav .owl-prev:hover,
+  .owl-nav .owl-next:hover {
+    transform: scale(1.25) translateY(-50%) !important;
+    -webkit-transform: scale(1.25) translateY(-50%) !important;
+    -ms-transform: scale(1.25) translateY(-50%) !important;
+    transition: transform 0.2s;
+  }
 
 .owl-custom-nav {
   float: right;

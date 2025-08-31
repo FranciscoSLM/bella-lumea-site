@@ -85,7 +85,6 @@ fetch('services-list.html')
   .then(response => response.text())
   .then(html => { document.getElementById('services-navbar-list').innerHTML = html; });
 </script>
-
     <!-- Nanopigmentação Service Section -->
     <section class="ftco-section  pb-0" id="service-nanopigmentacao">
       <div class="container">
@@ -95,16 +94,17 @@ fetch('services-list.html')
               <h2 class="mb-3 mb-0" style="color:var(--bg-pink); font-size:1.6rem; font-weight:800;">Sombrancelha Fio A Fio</h2>
               <h4 class="mb-3" style="color:var(--bg-pink); font-size:1.2rem; font-weight:600;">Nanopigmentação, Nanoblading, Micropigmentação, Microblading</h4>
               <p style="font-size:1.1rem;">
-                No Bella Lumea somos especialistas em Nanopigmentação fio a fio, também conhecida como Micropigmentação fio a fio, Nanoblading ou Microblading. Essa é uma técnica avançada, perfeita para quem têm sobrancelhas ralas e com falhas, e deseja sobrancelhas com aspecto natural, delicado e realista.<br>
+                No Bella Lumea somos especialistas em Nanopigmentação fio a fio, também conhecida como Micropigmentação fio a fio, Nanoblading ou Microblading.
+                <br> Essa é uma técnica avançada, perfeita para quem têm sobrancelhas ralas e com falhas, e deseja sobrancelhas com aspecto natural, delicado e realista.<br>
               </p>
+              <div class="d-flex justify-content-center">
+              <a href="#" class="button-pink wa-trigger mt-3" style="width:100%; max-width:320px; margin-bottom:20px;">Agende sua avaliação</a>
             </div>
-            <div class="d-flex justify-content-center">
-              <a href="#" class="button-pink wa-trigger mt-3" style="width:100%; max-width:320px;">Agende sua avaliação</a>
             </div>
           </div>
           <div class="col-lg-6 mb-4 mb-lg-0">
             <!-- Carousel Placeholder -->
-            <div class="owl-carousel nanopig-carousel">
+            <div class="owl-carousel nanopig-carousel" style="background:#fff; border-radius:12px; margin:0 auto; max-width:370px;">
               <div><img src="images/service-nanopigmentacao/nano_1.jpg" class="img-fluid rounded shadow" alt="Nanopigmentação exemplo 1"></div>
               <div><img src="images/service-nanopigmentacao/nano_7.jpg" class="img-fluid rounded shadow" alt="Nanopigmentação exemplo 2"></div>
               <div><img src="images/service-nanopigmentacao/nano_3.jpg" class="img-fluid rounded shadow" alt="Nanopigmentação exemplo 3"></div>
@@ -120,7 +120,7 @@ fetch('services-list.html')
     <section class="ftco-section pb-0" id="detalhe-nanopigmentacao">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-10 col-xl-9">
+          <div class="col-lg-12">
             <div class="destaque-frame">
               <h3 class="mb-4" style="color:var(--bg-pink); font-weight:700;">Sobre a Nanopigmentação Fio a Fio</h3>
               <p style="font-size:1.1rem;">
@@ -223,6 +223,7 @@ fetch('services-list.html')
                 <div class="text">
                   <p>Ariane Duarte, especialista em  nanopigmentação de sobrancelhas e apaixonada pelo universo da estética. 
                       Encontrei na nanopigmentação uma forma de cuidar, transformar e realçar a beleza natural de cada um, fio a fio, com leveza e delicadeza.
+                      <br>
                       Minha missão é entregar um olhar mais confiante, harmonioso e único, sempre com muito carinho e dedicação.
                       Nossos procedimentos são personalizados, respeitando o que você tem de mais lindo, sua essência e características únicas.
                   </p>
@@ -394,7 +395,10 @@ fetch('services-list.html')
             autoplayHoverPause: true,
             dots: true,
             nav: true,
-            navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">']
+            navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+            mouseDrag: false,
+            touchDrag: false,
+            pullDrag: false
           });
         }
       } else {
@@ -473,7 +477,10 @@ $(document).ready(function(){
     autoplayTimeout: 8000,
     autoplayHoverPause: true,
     dots: true,
-    nav: false
+    nav: false,
+    touchDrag: false,
+    mouseDrag: false,
+    pullDrag: false
   });
 });
 </script>
