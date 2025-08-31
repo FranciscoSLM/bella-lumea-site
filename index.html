@@ -86,8 +86,9 @@
             <a href="index.html" class="logo mb-3" style="display:inline-block;">
               <img class="logo" src="/images/logo-bella-lumea-branco.png" style="max-width:180px; width:100%; height:auto; margin-bottom:10px;">
             </a>
-            <h1 class="mb-2" style="font-size:2.2rem; font-weight:700; color:#fff; letter-spacing:2px;">STUDIO BELLA LUMEA</h1>
-            <h2 class="mb-4" style="font-size:1.3rem; font-weight:400; color:#fff;">Especialista em sobrancelha</h2>
+            <h1 class="mb-2" style="font-size:2.2rem; font-weight:700; color:#fff; letter-spacing:2px;">BELLA LUMEA </h1>
+            <h2 class="mb-4" style="font-size:1.3rem; font-weight:700; color:#fff;"><bold> Studio de Sobrancelhas</h2>
+          </div>
           </div>
         </div>
       </div>
@@ -101,26 +102,41 @@
         <i class="fab fa-instagram"></i>
       </a>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Bella Lumea</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); return false;">Contato</a></li>
-          </ul>
-        </div>
+    <!-- MINIMAL BOOTSTRAP FIXED NAVBAR: always visible, not affected by scroll -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+      <a class="navbar-brand" href="index.html">Bella Lumea</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="services-navbar-list"></div>
+          </li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
       </div>
     </nav>
-    <!-- END nav -->
+
+<script>
+// Load the services list into the navbar dropdown
+fetch('services-list.html')
+  .then(response => response.text())
+  .then(html => { document.getElementById('services-navbar-list').innerHTML = html; });
+</script>
+  <!-- END nav -->
+      <!-- Impact Phrase Pink Stripe -->
+      <div class="impact-stripe bg-pink text-center" style="padding-bottom: 1px; padding-top: 5px;">
+        <h5 class="text-white" style="font-size:1.1rem; font-weight:600; color:#fff;">Especialista em Sobrancelha Fio-A-Fio</h5>
+      </div>
+      <!-- End Impact Phrase Pink Stripe -->
     <section class="ftco-section" id="services">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="text-center mb-5" style="font-size:2.5rem; font-weight:700; color:var(--bg-brown); letter-spacing:2px;">SERVIÇOS</h2>
+            <h2 class="text-center mb-5" style="font-size:2.5rem; font-weight:700; color:var(--bg-pink); letter-spacing:2px;">SERVIÇOS</h2>
             <div class="services-nav mb-4 text-center">
               <a href="/index.html#service-nanopigmentacao" class="service-link mx-2">Nanopigmentação De Sobrancelhas</a>
               <a href="/index.html#service-design" class="service-link mx-2">Design de Sombrancelhas</a>
@@ -135,14 +151,19 @@
             <div class="destaque-frame" style="display:flex; flex-direction:column; height:100%; min-height:400px;">
               <img src="images/img-nano1.jpg" alt="Imagem destaque" class="img-fluid mb-4 destaque-img">
               <div class="destaque-text" style="flex:1 1 auto;">
-                <h2 class="mb-3">Nanopigmentação /<br> Micropigmentação De Sobrancelhas Fio a Fio</h2>
+                <h2 class="mb-3"><br> Sombrancelha<br> Fio a Fio, Micropigmentação, Nanopigmentação</h2>
                 <p>
-                  A Nanopigmentação fio a fio é uma técnica avançada de micropigmentação para quem busca sobrancelhas com aparência 100% natural.<br><br> Utilizando métodos como nanoblading e microblading, essa técnica desenha fios ultrafinos um a um, seguindo o crescimento natural dos pêlos.<br> O resultado é um acabamento leve, sofisticado e praticamente imperceptível até de perto.<br><br> Diferente de outras técnicas de micropigmentação que preenchem a sobrancelha com um efeito esfumado, a Nanopigmentação fio a fio — também conhecida como sobrancelha fio a fio — é ideal para quem quer valorizar o olhar sem parecer maquiado.<br> Essa técnica garante sobrancelhas mais cheias, harmoniosas e personalizadas, com efeito suave que valoriza a expressão facial.<br><br> Além de ser menos invasiva, proporciona maior definição e retoques mais práticos, com durabilidade de 12 a 18 meses.
+                  A Nanopigmentação fio a fio é uma técnica avançada de micropigmentação para quem busca sobrancelhas com aparência 100% natural.<br><br>
+                  Utilizando métodos como nanoblading e microblading, essa técnica desenha fios ultrafinos um a um, seguindo o crescimento natural dos pêlos.<br>
+                  O resultado é um acabamento leve, sofisticado e praticamente imperceptível até de perto.<br><br> 
+                  Diferente de outras técnicas de micropigmentação que preenchem a sobrancelha com um efeito esfumado, a Nanopigmentação fio a fio — também conhecida como sobrancelha fio a fio — é ideal para quem quer valorizar o olhar sem parecer maquiado.<br> 
+                  Essa técnica garante sobrancelhas mais cheias, harmoniosas e personalizadas, com efeito suave que valoriza a expressão facial.<br><br> 
+                  Além de ser menos invasiva, proporciona maior definição e retoques mais práticos, com durabilidade de 12 a 18 meses.
                 </p>
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -158,7 +179,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -176,7 +197,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -193,7 +214,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -211,7 +232,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -227,7 +248,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-pink wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -236,7 +257,7 @@
       </div>
     </section>
 
-    <section class="ftco-section bg-brown">
+    <section class="ftco-section bg-pink">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-9 heading-section ftco-animate text-center">
@@ -555,7 +576,7 @@
               <h3>Ainda não sabe se o procedimento é para você?</h2><br>
               <h6>Fale com nossa especialista, vamos te ajudar a entender o melhor procedimento para você! </h6>
             </div>
-            <a href="#" class="button-brown contact-whatsapp wa-trigger">
+            <a href="#" class="button-pink contact-whatsapp wa-trigger">
               <i class="fab fa-whatsapp contact-whatsapp-icon"></i> Agendar via WhatsApp
             </a>
           </div>
@@ -584,7 +605,7 @@
               </div>
               <div class="row justify-content-center" style="margin-top:auto;">
                 <div class="col-10 text-center">
-                  <a href="#" class="button-brown wa-trigger wa-handler-attached" style="width:100%; margin-top:10px;">Agende Agora</a>
+                  <a href="#" class="button-white wa-trigger" style="width:100%; margin-top:10px;">Agende Agora</a>
                 </div>
               </div>
             </div>
@@ -622,48 +643,48 @@
     </section>
 
     <section>
-              <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5"> 
           <div class="col-lg-10">
-            <h3 class="text-center mb-4" style="font-weight:700; color:var(--bg-brown); font-size:2rem;">O que nossos clientes dizem</h3>
-            <div class="reviews-list">
+            <h3 class="text-center mb-4" style="font-weight:700; color:var(--bg-pink); font-size:2rem;">O que nossos clientes dizem</h3>
+            <div class="reviews-list owl-carousel">
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Cristiane L</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Cristiane L</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Ótimo resultado. Atendimento profissional. Ficou perfeito! Recomendo!"</p>
               </div>
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Nina Kolos</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Nina Kolos</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Profissional excepcional! Fiquei encantada com o resultado e recomendo de olhos fechados!"</p>
               </div>
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Cristiane Mariano</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Cristiane Mariano</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Adorei. Minhas sobrancelhas tinham o final ralo e agora estão com formato bem definido. Lugar organizado e pontual no horário de atendimento."</p>
               </div>
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Fabio Costa</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Fabio Costa</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Simplesmente amei o resultado! Dá pra ver o carinho e o cuidado da profissional em cada detalhe. Muito atenciosa e dedicada. Super recomendo!"</p>
               </div>
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Joice Araújo Ferreira</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Joice Araújo Ferreira</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Ótima profissional, trabalho excelente, super indico. Além de ser uma profissional de excelência, também é receptiva e muito atenciosa."</p>
               </div>
               <div class="review mb-4 p-4" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
                 <div class="d-flex align-items-center mb-2">
-                  <span style="font-weight:600; font-size:1.1rem; color:#7c5a3a;">Izabela Ramalho</span>
+                  <span style="font-weight:600; font-size:1.1rem; color:var(--bg-pink);">Izabela Ramalho</span>
                   <span class="ml-3" style="color:#FFD700; font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 </div>
                 <p class="mb-0">"Profissional incrível e atendimento excelente! Superou todas as minhas expectativas!"</p>
@@ -689,7 +710,7 @@
           </div>
           <div class="col-md-6">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Tem alguma dúvida?</h2>
+              <h2 class="ftco-heading-2">Contato</h2>
               <div class="block-23 mb-3">
                 <ul>
                   <li><span class="icon icon-map-marker"></span><span class="text">Rua José Maurício da Veiga 745 – Santa Cruz, Belo Horizonte – 31150590</span></li>
@@ -729,6 +750,20 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+<script>
+// Ativa o carrossel de reviews
+$(document).ready(function(){
+  $('.reviews-list.owl-carousel').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 8000,
+    autoplayHoverPause: true,
+    dots: true,
+    nav: false
+  });
+});
+</script>
 <script>
 // Fallback WhatsApp handler in case main.js fails or loads late
 function isMobileDevice() {
