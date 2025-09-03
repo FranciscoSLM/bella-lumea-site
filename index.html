@@ -109,6 +109,17 @@
         .then(response => response.text())
         .then(html => {
           document.getElementById('navbar-include').innerHTML = html;
+          // Attach scroll handler after navbar is loaded
+          document.querySelectorAll('#navbar-include .nav-link[href="#contact"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+              var targetSection = document.querySelector('.appointment-info');
+              if (targetSection) {
+                e.preventDefault();
+                var y = targetSection.getBoundingClientRect().top + window.pageYOffset - 20;
+                window.scrollTo({top: y, behavior: 'smooth'});
+              }
+            });
+          });
         });
     </script>
   <!-- END nav -->
@@ -123,10 +134,10 @@
           <div class="col-12">
             <h2 class="text-center mb-5" style="font-size:2.5rem; font-weight:700; color:var(--bg-pink); letter-spacing:2px;">SERVIÇOS</h2>
             <div class="services-nav mb-4 text-center">
-              <a href="/index.html#service-nanopigmentacao" class="service-link mx-2">Nanopigmentação De Sobrancelhas</a>
-              <a href="/index.html#service-design" class="service-link mx-2">Design de Sombrancelhas</a>
-              <a href="/index.html#service-henna" class="service-link mx-2">Design com Henna</a>
-              <a href="/index.html#service-browlamination" class="service-link mx-2">Brow Lamination</a>
+              <a href="sobrancelha-fio-a-fio.html" class="service-link mx-2">Sobrancelha Fio a Fio</a>
+              <a href="brow-lamination.html" class="service-link mx-2">Brow Lamination</a>
+              <a href="design-com-henna.html" class="service-link mx-2">Design com Henna</a>
+              <a href="design-de-sobrancelhas.html" class="service-link mx-2">Design de Sombrancelhas</a>
               <a href="/index.html#service-epilacao" class="service-link mx-2">Epilação Facial</a>
               <a href="/index.html#service-refectocil" class="service-link mx-2">Pintura Refectocil</a>
           </div>
@@ -752,10 +763,11 @@ setTimeout(attachWhatsAppHandlerInline, 1000);
 </script>
 <script>
 
-// Smooth scroll to ftco-appointment section when clicking on contact link
-document.querySelectorAll('a[href="#contact"], .contact-link').forEach(function(link) {
+// Smooth scroll to appointment-info section when clicking on contato link
+// Only navbar Contato link scrolls to appointment-info
+document.querySelectorAll('nav .nav-link[href="#contact"]').forEach(function(link) {
   link.addEventListener('click', function(e) {
-    var targetSection = document.querySelector('.ftco-appointment');
+    var targetSection = document.querySelector('.appointment-info');
     if (targetSection) {
       e.preventDefault();
       var y = targetSection.getBoundingClientRect().top + window.pageYOffset - 20;

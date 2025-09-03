@@ -1,3 +1,17 @@
+/* Center carousel images vertically */
+.owl-carousel .item,
+.owl-carousel .owl-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 370px; /* match max-width or set as needed */
+}
+.owl-carousel img {
+  max-height: 90%;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
 /* Logo pequeno e centralizado */
 .logo {
   display: block;
