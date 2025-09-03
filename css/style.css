@@ -3253,6 +3253,12 @@ input[type="button"].btn-block {
 .tab-content > .active {
   display: block; }
 
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 7rem !important;
+  }
+}
+
 .navbar {
   position: relative;
   display: -webkit-box;
@@ -3266,7 +3272,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 2rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;
@@ -3323,7 +3329,7 @@ input[type="button"].btn-block {
   flex-grow: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -8992,6 +8998,8 @@ textarea.form-control {
 #faqAccordion .card {
   overflow-x: hidden;      
 }
+
+.collapse navbar-collapse
 
 body {
   overflow-x: hidden;     

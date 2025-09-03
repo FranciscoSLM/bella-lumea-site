@@ -24,6 +24,36 @@ setTimeout(attachWhatsAppHandler, 1000);
 
 	"use strict";
 
+	// Slide down animation for services dropdown
+	$(document).ready(function() {
+		var $dropdownToggle = $('#navbarDropdownMenuLink');
+		var $dropdownMenu = $('#services-navbar-list');
+		if ($dropdownToggle.length && $dropdownMenu.length) {
+			// Prevent default Bootstrap dropdown behavior
+			$dropdownToggle.off('click').on('click', function(e) {
+				e.preventDefault();
+				var isShown = $dropdownMenu.hasClass('show');
+				if (!isShown) {
+					$dropdownMenu.stop(true, true).slideDown(250).addClass('show');
+				} else {
+					$dropdownMenu.stop(true, true).slideUp(200, function() {
+						$dropdownMenu.removeClass('show');
+					});
+				}
+			});
+			// Hide dropdown when clicking outside
+			$(document).on('click', function(e) {
+				if (!$dropdownMenu.is(e.target) && $dropdownMenu.has(e.target).length === 0 && !$dropdownToggle.is(e.target)) {
+					if ($dropdownMenu.hasClass('show')) {
+						$dropdownMenu.stop(true, true).slideUp(200, function() {
+							$dropdownMenu.removeClass('show');
+						});
+					}
+				}
+			});
+		}
+	});
+
 	$(window).stellar({
     responsive: false,
     parallaxBackgrounds: true,

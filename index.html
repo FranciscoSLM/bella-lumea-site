@@ -102,30 +102,15 @@
         <i class="fab fa-instagram"></i>
       </a>
     </div>
-    <!-- MINIMAL BOOTSTRAP FIXED NAVBAR: always visible, not affected by scroll -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-      <a class="navbar-brand" href="index.html">Bella Lumea</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="services-navbar-list"></div>
-          </li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
-        </ul>
-      </div>
-    </nav>
-
-<script>
-// Load the services list into the navbar dropdown
-fetch('services-list.html')
-  .then(response => response.text())
-  .then(html => { document.getElementById('services-navbar-list').innerHTML = html; });
-</script>
+    <!-- Navbar will be loaded dynamically from navbar.html -->
+    <div id="navbar-include"></div>
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-include').innerHTML = html;
+        });
+    </script>
   <!-- END nav -->
       <!-- Impact Phrase Pink Stripe -->
       <div class="impact-stripe bg-pink text-center" style="padding-bottom: 1px; padding-top: 5px;">
@@ -695,40 +680,15 @@ fetch('services-list.html')
           </div>
     </section>
 
-   <footer class="ftco-footer ftco-section img">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Sobre Nós</h2>
-              <p>Com mais de cinco anos de experiência, a Bella Lumea é um estúdio de sobrancelhas em Belo Horizonte especializado em realçar a beleza de forma natural, sofisticada e personalizada.<br><br>
-                 Reconhecida também como um salão de sobrancelhas de referência na região, nossa missão é transformar o olhar das nossas clientes com técnicas modernas e resultados que harmonizam o rosto, elevam a autoestima e valorizam cada detalhe da sua beleza única.<br><br>
-                 Somos especialistas em micropigmentação e nanopigmentação de sobrancelhas, oferecendo ainda outros procedimentos como nanoblading, microblading, design de sobrancelhas com henna e brow lamination.<br><br> Cada técnica é aplicada com cuidado e precisão, sempre respeitando o formato natural das sobrancelhas e o estilo de cada cliente.
-                 Na Bella Lumea, cada detalhe é pensado para que você se sinta confiante, única e ainda mais bonita.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Contato</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">Rua José Maurício da Veiga 745 – Santa Cruz, Belo Horizonte – 31150590</span></li>
-                  <li><span class="icon icon-map-marker"></span><span class="text">Rua Antônio de Albuquerque 749 sala 06 – Savassi, Belo Horizonte – 30112010</span></li>
-                  <li><a href="tel:+31993791793"><span class="icon icon-phone"></span><span class="text">(31) 99379-1793</span></a></li>
-                  <li><a href="mailto:info@seudominio.com"><span class="icon icon-envelope"></span><span class="text">bellalumea@gmail.com</span></a></li>
-                </ul>
-              </div>
-                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#" class="wa-trigger" title="Fale conosco no WhatsApp"><span class="icon-whatsapp"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/bellalumeasobrancelhas/" target="_blank" title="Nos siga no Instagram"><span class="icon-instagram"></span></a></li>
-                <li class="ftco-animate"><a href="#" id="invisible-footer-btn" class="wa-trigger" style="opacity:0;position:absolute;width:32px;height:32px;left:-9999px;" tabindex="-1" aria-hidden="true"><span class="icon-whatsapp"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer will be loaded dynamically from footer.html -->
+    <div id="footer-include"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-include').innerHTML = html;
+        });
+    </script>
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -791,18 +751,17 @@ document.addEventListener('DOMContentLoaded', attachWhatsAppHandlerInline);
 setTimeout(attachWhatsAppHandlerInline, 1000);
 </script>
 <script>
-document.getElementById('detalhe-link').addEventListener('click', function(e) {
-  e.preventDefault();
-  var btn = document.getElementById('invisible-footer-btn');
-  if (btn) {
-    btn.style.opacity = '1';
-    btn.style.position = 'static';
-    btn.style.left = '';
-    btn.style.width = '32px';
-    btn.style.height = '32px';
-    btn.tabIndex = 0;
-    btn.setAttribute('aria-hidden', 'false');
-  }
+
+// Smooth scroll to ftco-appointment section when clicking on contact link
+document.querySelectorAll('a[href="#contact"], .contact-link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var targetSection = document.querySelector('.ftco-appointment');
+    if (targetSection) {
+      e.preventDefault();
+      var y = targetSection.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+  });
 });
 
 // Corrige o foco dos links de serviços para alinhar o topo da div ao topo da tela
